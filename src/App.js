@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import jsonData from './output.json';
 import {useEffect, useState} from "react";
@@ -13,7 +12,7 @@ export default function App() {
   let map = null
   // 구 목록
   const [selectedGu, setSelectedGu] = useState('강남구');
-  const seoulGuList = ['강남구', '강동구', '강북구', '강서구', '관악구', '광진구', '구로구', '금천구', '노원구', '도봉구', '동대문구', '동작구', '마포구', '서대문구', '서초구', '성동구', '성북구', '송파구', '양천구', '영등포구', '용산구', '은평구', '종로구', '중구', '중랑구'];
+  const seoulGuList = ['강남구', '강동구', '강북구', '강서구', '관악구', '광진구', '구로구', '금천구', '노원구', '도봉구', '동대문구', '동작구', '마포구', '서대문구', '서초구', '성동구', '성북구', '송파구', '양천구', '영등포', '용산구', '은평구', '종로구', '중구', '중랑구'];
 
   const defaultMarkerimageSrc = "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png";
 
@@ -91,7 +90,7 @@ export default function App() {
       marker.setMap(map)
 
       // 마커를 클릭했을 때 마커 위에 표시할 인포윈도우를 생성합니다
-      let iwContent = `<div style="padding:5px;color:black;">${positions[i].title}<br/><a href="${positions[i].url}">자세히보기</a> </div>`, // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+      let iwContent = `<div style="padding:5px;color:black;">${positions[i].title}<br/><a href="${positions[i].url}" target="_blank">자세히보기</a> </div>`, // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
           iwRemoveable = true; // removeable 속성을 ture 로 설정하면 인포윈도우를 닫을 수 있는 x버튼이 표시됩니다
 
       // 인포윈도우를 생성합니다
@@ -100,20 +99,25 @@ export default function App() {
         removable: iwRemoveable
       });
 
-      // 마커에 클릭이벤트를 등록합니다
-      kakao.maps.event.addListener(marker, 'mouseover', function () {
-        // 마커 위에 인포윈도우를 표시합니다
+      // 마커에 클릭/터치이벤트를 등록합니다
+      kakao.maps.event.addListener(marker, 'click', function () {
         infowindow.open(map, marker);
       });
 
-      kakao.maps.event.addListener(marker, 'mouseout', function () {
 
+
+      kakao.maps.event.addListener(marker, 'mouseout', function () {
+        setTimeout(() => {
+          infowindow.close(map, marker);
+        }, 1000);
+      });
+      kakao.maps.event.addListener(marker, 'touchend', function () {
         setTimeout(() => {
           infowindow.close(map, marker);
         }, 1000);
         // 마커 위에 인포윈도우를 표시합니다
-
       });
+
     }
   }
 
@@ -149,6 +153,8 @@ export default function App() {
         <div>
           <h1> 기후동행카드를 찾아서. </h1>
           <h3> 내 주변 기후동행카드를 구매할 수 있는 편의점은 어디?</h3>
+          <h5> 개발자의 한계로 모바일에서는 클릭해도 정보가 안보입니다...... </h5>
+          <h5>일단은 PC화면을 이용해주세요.. 쥬륵..</h5>
           <select id="guSelect" value={selectedGu} onChange={handleGuChange}>
             <option value="">구를 선택하세요</option>
             {seoulGuList.map((gu) => (
@@ -158,9 +164,39 @@ export default function App() {
             ))}
           </select>
           <div id="map"
-               style={{width: '80%', 'height': '500px', display: 'block', margin: '5px'}}>
+               style={{width: '100%', 'height': '500px', display: 'block', margin: '5px'}}>
           </div>
 
+
+          <div>
+            <h2>하기 편의점들은 현재 정보 수집중입니다</h2>
+            <p>강남구 이마트24 동일타워점</p>
+            <p>강동구 이마트24 고덕디엠스퀘어점</p>
+            <p>강서구 GS25  가양글로벌점</p>
+            <p>강서구 이마트24 왈도강서캠퍼스점</p>
+            <p>동대문구 이마트24 전농배봉로점</p>
+            <p>동작구 GS25  작역점</p>
+            <p>동작구 GS25  상도스위트점</p>
+            <p>마포구 이마트24 홍대합정점</p>
+            <p>마포구 이마트24 R마포망원로점</p>
+            <p>서대문구 세븐일레븐 서대문푸르지오점</p>
+            <p>서초구 이마트24 호반건설사옥점</p>
+            <p>성동구 GS25  금호예향점</p>
+            <p>성동구 이마트24 R한양여대스퀘어점</p>
+            <p>성동구 이마트24 성동플라이쿱점</p>
+            <p>송파구 GS25  S9삼전역점</p>
+            <p>송파구 이마트24 송파해누리점</p>
+            <p>영등포 이마트24 양평선유도점</p>
+            <p>영등포 이마트24 여의콤비점</p>
+            <p>영등포 이마트24 어반322점</p>
+            <p>용산구 이마트24 용산트럼프월드점</p>
+            <p>은평구 GS25  녹번퍼스트점</p>
+            <p>은평구 이마트24 R갈현대로점</p>
+            <p>중랑구 CU 면목새롬점</p>
+          </div>
+            <div>
+              <h1>문의사항 : vividxenon@gmail.com</h1>
+            </div>
 
         </div>
 
