@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/i-want-my-climate-card/static/css/main.f855e6bc.css",
-    "main.js": "/i-want-my-climate-card/static/js/main.98822f03.js",
+    "main.js": "/i-want-my-climate-card/static/js/main.396a9471.js",
     "static/js/787.7d0ec504.chunk.js": "/i-want-my-climate-card/static/js/787.7d0ec504.chunk.js",
     "static/media/emart24.png": "/i-want-my-climate-card/static/media/emart24.cc9202f49e0b821d05fe.png",
     "static/media/cu.png": "/i-want-my-climate-card/static/media/cu.b1e5ac718981161af66c.png",
@@ -9,11 +9,11 @@
     "static/media/seveneleven.svg": "/i-want-my-climate-card/static/media/seveneleven.2774985cd93e9581cbdf6e148bdd8eca.svg",
     "index.html": "/i-want-my-climate-card/index.html",
     "main.f855e6bc.css.map": "/i-want-my-climate-card/static/css/main.f855e6bc.css.map",
-    "main.98822f03.js.map": "/i-want-my-climate-card/static/js/main.98822f03.js.map",
+    "main.396a9471.js.map": "/i-want-my-climate-card/static/js/main.396a9471.js.map",
     "787.7d0ec504.chunk.js.map": "/i-want-my-climate-card/static/js/787.7d0ec504.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f855e6bc.css",
-    "static/js/main.98822f03.js"
+    "static/js/main.396a9471.js"
   ]
 }
