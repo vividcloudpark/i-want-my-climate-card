@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/i-want-my-climate-card/static/css/main.f855e6bc.css",
+    "main.js": "/i-want-my-climate-card/static/js/main.0147b51c.js",
+    "static/js/787.7d0ec504.chunk.js": "/i-want-my-climate-card/static/js/787.7d0ec504.chunk.js",
+    "static/media/emart24.png": "/i-want-my-climate-card/static/media/emart24.cc9202f49e0b821d05fe.png",
+    "static/media/cu.png": "/i-want-my-climate-card/static/media/cu.b1e5ac718981161af66c.png",
+    "static/media/gs25.png": "/i-want-my-climate-card/static/media/gs25.14d569208b9d85d0a18a.png",
+    "static/media/seveneleven.svg": "/i-want-my-climate-card/static/media/seveneleven.2774985cd93e9581cbdf6e148bdd8eca.svg",
+    "index.html": "/i-want-my-climate-card/index.html",
+    "main.f855e6bc.css.map": "/i-want-my-climate-card/static/css/main.f855e6bc.css.map",
+    "main.0147b51c.js.map": "/i-want-my-climate-card/static/js/main.0147b51c.js.map",
+    "787.7d0ec504.chunk.js.map": "/i-want-my-climate-card/static/js/787.7d0ec504.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f855e6bc.css",
+    "static/js/main.0147b51c.js"
+  ]
+}
